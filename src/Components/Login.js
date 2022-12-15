@@ -1,6 +1,7 @@
 import React from "react";
 import { BsGithub } from "react-icons/bs";
 import { IoIosPeople } from "react-icons/io";
+import login_bg from "../Assets/login_bg.jpg";
 
 function Login() {
   return (
@@ -19,7 +20,7 @@ function Login() {
       </div>
       <div
         style={{
-          backgroundImage: `url("https://img.freepik.com/free-vector/tiny-programmers-big-laptop-writing-script-coders-app-developers-with-computers-flat-vector-illustration-programming-engineering-software-development-concept-banner-landing-web-page_74855-25360.jpg?w=1060&t=st=1669804520~exp=1669805120~hmac=d5845190837133bae163dae5864365528cc94c9eb595a2a90090429e87f38cf8")`,
+          backgroundImage: `url(${login_bg})`,
         }}
         className="col-span-2 bg-contain bg-top bg-no-repeat"
       ></div>
