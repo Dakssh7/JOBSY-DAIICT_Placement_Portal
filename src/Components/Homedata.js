@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import { GoLocation } from "react-icons/go";
 import { BiCoinStack } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 function Homedata() {
   const [tech, setTech] = useState("");
   const [city, setCity] = useState("");
 
   return (
-    <div
+    <motion.div
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      exit={{ scaleY: 0 }}
+      transition={{ duration: 0.5 }}
       id="talent_section"
       className=" flex rounded-md shadow-inner  my-18 flex-col items-center justify-center gap-5 "
     >
@@ -82,28 +87,11 @@ function Homedata() {
             onChange={(e) => setCity(e.target.value)}
           />
         </label>
-        {/* <label>
-          <RiSuitcaseLine className="inline mr-1 text-xl"></RiSuitcaseLine>
-          <input
-            type="text"
-            className="p-1 w-[90%] pt-2 focus:border-b focus:border-blue-300 focus:outline-none"
-            placeholder="Select availability of Candidate"
-            name="availibility"
-            value={avl}
-            onChange={(e) => setAvl(e.target.value)}
-          />
-        </label> */}
         <button className="transition-all duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 active:bg-blue-700 border-blue-500 text-white px-4 py-2 text-base  rounded-md w-1/2 ml-20 flex justify-center ">
           <BsSearch className="inline self-center mr-1"></BsSearch> Search
         </button>
       </div>
-      {/* <div
-        className="bg-[length:80%] bg-no-repeat bg-center col-span-2"
-        style={{
-          backgroundImage: `url('https://img.freepik.com/free-vector/young-tiny-girl-sitting-coding-via-laptop-computer-programmer-code-flat-vector-illustration-it-digital-technology_74855-8751.jpg?w=1060&t=st=1669834202~exp=1669834802~hmac=220f0849d9ce472e2069bf9a041c9bb68f4c3e38d0bace165bff57ae42b41a62')`,
-        }}
-      ></div> */}
-    </div>
+    </motion.div>
   );
 }
 

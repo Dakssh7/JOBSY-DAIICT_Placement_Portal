@@ -7,10 +7,17 @@ import { BsFillChatDotsFill } from "react-icons/bs";
 import { RiSuitcaseLine } from "react-icons/ri";
 import { IoLocationOutline } from "react-icons/io5";
 import user_image from "../Assets/user_image.jpg";
+import { motion } from "framer-motion";
 
 function Profiles() {
   return (
-    <div className="m-1.5 grid grid-cols-3 gap-x-5 gap-y-7">
+    <motion.div
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      exit={{ scaleY: 0 }}
+      transition={{ duration: 0.5 }}
+      className="m-1.5 grid grid-cols-3 gap-x-5 gap-y-7"
+    >
       <div className="CARD shadow-md  shadow-rose-100">
         <div className="flex bg-gradient-to-r from-indigo-300 to-purple-400 rounded-md p-2">
           <img
@@ -532,7 +539,7 @@ function Profiles() {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

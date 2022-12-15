@@ -3,8 +3,9 @@ import Homedata from "./Homedata";
 import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 import { FaRegCommentDots } from "react-icons/fa";
 import { BsShare, BsSave } from "react-icons/bs";
+import { motion } from 'framer-motion';
 
-function Explorework({
+function ExploreworkData({
   imgSRC,
   imgALT,
   heading,
@@ -12,13 +13,19 @@ function Explorework({
   projectVideoSRC,
   likesCount,
   commentsCount,
-    viewsCount,
-  skills
+  viewsCount,
+  skills,
 }) {
   return (
     <>
       <Homedata />
-      <div className="mt-2">
+      <motion.div
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        exit={{ scaleY: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mt-2"
+      >
         <div className="z-10 flex w-full items-center justify-start gap-3 bg-white p-3">
           <img
             loading="lazy"
@@ -81,9 +88,9 @@ function Explorework({
             javascript
           </span>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
 
-export default Explorework;
+export default ExploreworkData;

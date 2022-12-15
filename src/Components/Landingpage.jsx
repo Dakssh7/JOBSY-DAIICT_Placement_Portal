@@ -1,10 +1,15 @@
 import React from "react";
 import Typed from "react-typed";
 import landing_bg from "../Assets/landing_bg.jpg";
+import { motion } from "framer-motion";
 
 export default function Landingpage() {
   return (
-    <div
+    <motion.div
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      exit={{ scaleY: 0 }}
+      transition={{ duration: 0.5 }}
       className="grid grid-cols-2 bg-[#faf9ff] h-screen w-screen bg-contain bg-no-repeat bg-right"
       style={{ backgroundImage: `url(${landing_bg})` }}
     >
@@ -23,6 +28,6 @@ export default function Landingpage() {
           loop
         />
       </div>
-    </div>
+    </motion.div>
   );
 }

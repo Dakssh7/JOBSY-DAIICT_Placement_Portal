@@ -15,9 +15,9 @@ function Navbar() {
         <li className="mx-10 hover:text-black">
           <Link to="/hiretalent"> Hire Talents</Link>
         </li>
-        <li className="mx-10 hover:text-black">
+        {/* <li className="mx-10 hover:text-black">
           <Link to="/challange"> Challanges</Link>
-        </li>
+        </li> */}
         <li className="mx-10 hover:text-black">
           <Link to="/getstarted"> Get Started</Link>
         </li>
