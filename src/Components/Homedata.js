@@ -10,10 +10,10 @@ function Homedata() {
 
   return (
     <motion.div
-      initial={{ scaleY: 0 }}
-      animate={{ scaleY: 1 }}
-      exit={{ scaleY: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ scaleX: 0 }}
+      animate={{ scaleX: 1 }}
+      exit={{ scaleX: 0 }}
+      transition={{ duration: 0.8 }}
       id="talent_section"
       className=" flex rounded-md shadow-inner  my-18 flex-col items-center justify-center gap-5 "
     >

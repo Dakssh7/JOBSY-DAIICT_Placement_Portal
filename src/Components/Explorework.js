@@ -13,7 +13,7 @@ function Explorework() {
       initial={{ scaleY: 0 }}
       animate={{ scaleY: 1 }}
       exit={{ scaleY: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.8 }}
     >
       <Homedata />
     </motion.div>

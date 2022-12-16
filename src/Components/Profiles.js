@@ -15,7 +15,7 @@ function Profiles() {
       initial={{ scaleY: 0 }}
       animate={{ scaleY: 1 }}
       exit={{ scaleY: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.8 }}
       className="m-1.5 grid grid-cols-3 gap-x-5 gap-y-7"
     >
       <div className="CARD shadow-md  shadow-rose-100">

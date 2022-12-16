@@ -3,9 +3,10 @@ import Homedata from "./Homedata";
 import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 import { FaRegCommentDots } from "react-icons/fa";
 import { BsShare, BsSave } from "react-icons/bs";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 function ExploreworkData({
+  userID,
   imgSRC,
   imgALT,
   heading,
@@ -23,7 +24,7 @@ function ExploreworkData({
         initial={{ scaleY: 0 }}
         animate={{ scaleY: 1 }}
         exit={{ scaleY: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.8 }}
         className="mt-2"
       >
         <div className="z-10 flex w-full items-center justify-start gap-3 bg-white p-3">

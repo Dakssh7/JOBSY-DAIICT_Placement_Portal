@@ -9,7 +9,7 @@ export default function Landingpage() {
       initial={{ scaleY: 0 }}
       animate={{ scaleY: 1 }}
       exit={{ scaleY: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.8 }}
       className="grid grid-cols-2 bg-[#faf9ff] h-screen w-screen bg-contain bg-no-repeat bg-right"
       style={{ backgroundImage: `url(${landing_bg})` }}
     >

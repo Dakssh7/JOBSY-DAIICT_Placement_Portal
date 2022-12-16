@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 function Login() {
   return (
     <motion.div
-      initial={{ scaleY: 0 }}
-      animate={{ scaleY: 1 }}
-      exit={{ scaleY: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ scaleX: 0 }}
+      animate={{ scaleX: 1 }}
+      exit={{ scaleX: 0 }}
+      transition={{ duration: 0.8 }}
       className="grid grid-cols-3  h-screen"
     >
       <div className="ml-2 bg-gradient-to-r from-indigo-300 to-purple-400 m-auto shadow-2xl px-24 py-28 border border-gray-300 rounded-md text-center">
