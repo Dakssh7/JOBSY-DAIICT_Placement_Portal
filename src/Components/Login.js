@@ -11,7 +11,10 @@ function Login() {
       animate={{ scaleX: 1 }}
       exit={{ scaleX: 0 }}
       transition={{ duration: 0.8 }}
-      className="grid grid-cols-3  h-screen"
+      style={{
+        backgroundImage: `url(${login_bg})`,
+      }}
+      className="grid grid-cols-3 h-screen bg-auto bg-no-repeat bg-right bg-opacity-0"
     >
       <div className="ml-2 bg-gradient-to-r from-indigo-300 to-purple-400 m-auto shadow-2xl px-24 py-28 border border-gray-300 rounded-md text-center">
         <h2 className="text-3xl mt-[-70px]  font-bold tracking-tight">
@@ -25,12 +28,6 @@ function Login() {
           <BsGithub className="mr-2 mt-1" /> GitHub
         </button>
       </div>
-      <div
-        style={{
-          backgroundImage: `url(${login_bg})`,
-        }}
-        className="col-span-2 bg-contain bg-top bg-no-repeat"
-      ></div>
     </motion.div>
   );
 }

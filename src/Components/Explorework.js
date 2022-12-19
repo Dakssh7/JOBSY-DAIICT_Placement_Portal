@@ -7,13 +7,16 @@ import { motion } from "framer-motion";
 
 function Explorework() {
   useEffect(() => {});
-
+const blogVariants = {
+  enter: { transition: { staggerChildren: 0.1 } },
+  exit: { transition: { staggerChildren: 0.1 } },
+};
   return (
     <motion.div
-      initial={{ scaleY: 0 }}
-      animate={{ scaleY: 1 }}
-      exit={{ scaleY: 0 }}
-      transition={{ duration: 0.8 }}
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      variants={blogVariants}
     >
       <Homedata />
     </motion.div>

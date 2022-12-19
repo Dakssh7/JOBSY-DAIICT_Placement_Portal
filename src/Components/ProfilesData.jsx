@@ -8,8 +8,8 @@ export default function ProfilesData({
   userName,
   userDesignation,
   userLocation,
-  skills, // array
-  availabilities, // array
+  skills, 
+  availabilities, 
 }) {
   return (
     <motion.div
