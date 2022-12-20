@@ -5,7 +5,6 @@ import login_bg from "../Assets/login_bg.jpg";
 import { motion } from "framer-motion";
 
 function Login() {
-  fetch("http://localhost:5000/api/login").then((res) => console.log(res));
   return (
     <motion.div
       initial={{ y: 300, opacity: 0 }}

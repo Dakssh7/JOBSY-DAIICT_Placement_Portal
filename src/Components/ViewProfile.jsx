@@ -1,17 +1,40 @@
-import React from "react";
-import { BiCoinStack } from "react-icons/bi";
-import { MdEventAvailable } from "react-icons/md";
-import { BsGithub, BsLinkedin, BsSave2, BsShare } from "react-icons/bs";
-import { CgProfile } from "react-icons/cg";
-import { BsFillChatDotsFill } from "react-icons/bs";
-import { RiSuitcaseLine } from "react-icons/ri";
-import { IoLocationOutline } from "react-icons/io5";
-import user_image from "../Assets/user_image.jpg";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { BiCoinStack } from "react-icons/bi";
+import {
+  BsFillChatDotsFill,
+  BsGithub,
+  BsLinkedin,
+  BsSave2,
+  BsShare
+} from "react-icons/bs";
+import { IoLocationOutline } from "react-icons/io5";
+import { MdEventAvailable } from "react-icons/md";
+import { RiSuitcaseLine } from "react-icons/ri";
+import { useParams } from "react-router-dom";
+import { HashLoader } from "react-spinners";
+import axios from "../axiosConfig/axios";
 
 function ViewProfile() {
-  const githubURL = null,
-    linkedInURL = null;
+  const { userID } = useParams();
+  const [user, setUser] = useState();
+  const getData = () => {
+    axios
+      .get(`/users/${userID}`)
+      .then((res) => setUser(res.data))
+      .catch((err) => console.error(err));
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+
+  if (!user) {
+    return (
+      <div className="flex h-[80vh] justify-center">
+        <HashLoader color="#ba8dfc" className="self-center" />
+      </div>
+    );
+  }
   return (
     <motion.div
       initial={{ y: 300, opacity: 0 }}
@@ -23,27 +46,27 @@ function ViewProfile() {
       <div className="CARD p-1">
         <div className="flex bg-gradient-to-r from-indigo-300 to-purple-400  p-2">
           <img
-            src={`${user_image}`}
+            src={`${user.image}`}
             alt="user image"
             className="h-16 w-16 rounded-full self-center mr-4 bg-transparent"
           />
           <div>
-            <h1 className="font-bold text-lg">USER</h1>
-            <p>
-              <RiSuitcaseLine className="inline text-lg mb-1"></RiSuitcaseLine>
-              Designation
+            <h1 className="font-bold text-lg">{user.username}</h1>
+            <p className="text-black">
+              <RiSuitcaseLine className=" inline text-lg mb-1"></RiSuitcaseLine>
+              {user.company.title}
             </p>
-            <p>
-              <IoLocationOutline className="inline text-lg mb-1"></IoLocationOutline>
-              Location
+            <p className="text-black">
+              <IoLocationOutline className=" inline text-lg mb-1"></IoLocationOutline>
+              {user.address.city}
             </p>
           </div>
         </div>
         <div className="social-media-links">
-          <a href={githubURL} className="cursor-pointer  m-3">
+          <a className="cursor-pointer  m-3">
             <BsGithub className="inline scale-125"></BsGithub>
           </a>
-          <a href={linkedInURL} className="cursor-pointer  m-3">
+          <a className="cursor-pointer  m-3">
             <BsLinkedin className="inline scale-125"></BsLinkedin>
           </a>
         </div>
@@ -100,14 +123,20 @@ function ViewProfile() {
         </div>
       </div>
       <div className="col-span-3 p-1">
-        <h2 className="font-bold mb-1">About me</h2>
-        hi, i'm Rushikesh Adhav, a passionate self-taught full stack web
+        <h2 className="font-bold mb-1">About {user.username}</h2>
+        {`hi, i'm ${user.username},
+        a passionate self-taught full stack web
         developer and a freelance software engineer from india. my passion for
         software lies with dreaming up ideas and making them come true with
         elegant interfaces. i take great care in the experience, architecture,
-        and code quality of the things I build.
-        <h2 className="font-bold mt-2 mb-1">My Projects:</h2>
-        Project Links in a list
+        and code quality of the things I build.`}
+        <h2 className="font-bold my-1">Contact Information:</h2>
+        e-mail - {user.email}
+        <hr />
+        Phone - {user.phone}
+        <hr />
+        Address - {user.address.address}, {user.address.city}
+        <hr />
       </div>
     </motion.div>
   );

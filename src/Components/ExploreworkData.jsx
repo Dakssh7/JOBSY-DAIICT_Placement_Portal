@@ -17,7 +17,6 @@ function ExploreworkData({
   viewsCount,
   skills,
 }) {
-  console.log(userID);
   return (
     <>
       <motion.div

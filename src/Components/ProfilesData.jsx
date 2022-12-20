@@ -7,6 +7,7 @@ import { BsFillChatDotsFill } from "react-icons/bs";
 import { RiSuitcaseLine } from "react-icons/ri";
 import { IoLocationOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfilesData({
   userID,
@@ -18,6 +19,10 @@ export default function ProfilesData({
   skills,
   availabilities,
 }) {
+  let navigate = useNavigate();
+  function clickHandler() {
+    navigate(`/hiretalent/${userID}`);
+  }
   return (
     <motion.div
       initial={{ y: 300, opacity: 0 }}
@@ -91,7 +96,10 @@ export default function ProfilesData({
           <button className="items-baseline p-2 my-3 w-fit justify-center font-medium transition-all duration-300 ease-in-out disabled:opacity-50 bg-gradient-to-r from-indigo-300 to-purple-400 text-gray-900 hover:bg-gradient-to-t hover:from-indigo-400 hover:to-purple-500  bg-opacity-20 hover:bg-opacity-30 active:bg-opacity-40 border-none rounded-md   ">
             <BsSave2 className="inline mr-"></BsSave2> SAVE
           </button>
-          <button className=" items-baseline p-2 my-3 w-fit justify-center font-medium transition-all duration-300 ease-in-out disabled:opacity-50 bg-gradient-to-r from-indigo-300 to-purple-400 text-gray-900 hover:bg-gradient-to-t hover:from-indigo-400 hover:to-purple-500  border-none rounded-md   ">
+          <button
+            onClick={() => clickHandler()}
+            className=" items-baseline p-2 my-3 w-fit justify-center font-medium transition-all duration-300 ease-in-out disabled:opacity-50 bg-gradient-to-r from-indigo-300 to-purple-400 text-gray-900 hover:bg-gradient-to-t hover:from-indigo-400 hover:to-purple-500  border-none rounded-md   "
+          >
             <CgProfile className="inline mr-1  mb-[3px]" />
             VIEW
           </button>

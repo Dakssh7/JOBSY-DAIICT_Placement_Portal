@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Homedata from "./Homedata";
-import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
-import { FaRegCommentDots } from "react-icons/fa";
-import { BsShare, BsSave } from "react-icons/bs";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import axios from "../axiosConfig/axios";
 import ExploreworkData from "./ExploreworkData";
+import Homedata from "./Homedata";
+import { HashLoader } from "react-spinners";
 
 function Explorework() {
   const [users, setUsers] = useState();
@@ -18,12 +16,19 @@ function Explorework() {
   useEffect(() => {
     getData();
   }, []);
+  useEffect(() => {
+    if (users && users.length===0) {
+      alert("Your search returned no result!")
+    }
+  }, [users]);
 
   if (!users) {
     return (
-    <h1 className="text-3xl text-center">Loading...</h1>
-  )
-}
+      <div className="flex h-[80vh] justify-center">
+        <HashLoader color="#ba8dfc" className="self-center" />
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -32,11 +37,12 @@ function Explorework() {
       exit={{ y: -300, opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
     >
-      <Homedata />
+      <Homedata setUsers={setUsers} />
       <div className="grid grid-cols-3 gap-4">
         {users.map((user) => {
           return (
             <ExploreworkData
+              key={user.id}
               userID={user.id}
               imgSRC={user.image}
               imgALT={`${user.firstName}+'image'`}
@@ -46,12 +52,11 @@ function Explorework() {
               likesCount={Math.round(user.height)}
               commentsCount={Math.round(user.weight)}
               viewsCount={user.age}
-            //todo: skills is remaining
+              //todo: skills is remaining
             />
           );
         })}
-        </div>
-      
+      </div>
     </motion.div>
   );
 }

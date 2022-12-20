@@ -3,11 +3,30 @@ import { GoLocation } from "react-icons/go";
 import { BiCoinStack } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import { motion } from "framer-motion";
+import axios from "../axiosConfig/axios";
 
-function Homedata() {
+function Homedata({ setUsers }) {
   const [tech, setTech] = useState("");
   const [city, setCity] = useState("");
-
+  function clickHandler() {
+    if (!tech && !city) alert("provide atleast one value : tech stack or city");
+    else {
+      var search = "";
+      if (tech) {
+        search += `company.department&value=${tech}`;
+      }
+      if (city) {
+        search += `address.city&value=${city}`;
+      }
+      console.log("search = ", search);
+      axios
+        .get(`/users/filter?key=${search}`)
+        .then((res) => {
+          setUsers(res.data.users);
+        })
+        .catch((err) => console.error("error", err));
+    }
+  }
   return (
     <motion.div
       initial={{ y: 300, opacity: 0 }}
@@ -42,19 +61,19 @@ function Homedata() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               aria-hidden="true"
               className="mr-2 h-5 w-5"
             >
               <path
-                strokelinecap="round"
-                strokelinejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M20 12H4"
               ></path>
             </svg>
             <span className="italic">
-              <div class="Typewriter" data-testid="typewriter-wrapper">
+              <div className="Typewriter" data-testid="typewriter-wrapper">
                 <span className="Typewriter__wrapper">Anders Hejlsberg</span>
                 <span className="Typewriter__cursor"></span>
               </div>
@@ -87,7 +106,10 @@ function Homedata() {
             onChange={(e) => setCity(e.target.value)}
           />
         </label>
-        <button className="transition-all duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 active:bg-blue-700 border-blue-500 text-white px-4 py-2 text-base  rounded-md w-1/2 ml-20 flex justify-center ">
+        <button
+          onClick={() => clickHandler()}
+          className="transition-all duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 active:bg-blue-700 border-blue-500 text-white px-4 py-2 text-base  rounded-md w-1/2 ml-20 flex justify-center "
+        >
           <BsSearch className="inline self-center mr-1"></BsSearch> Search
         </button>
       </div>
