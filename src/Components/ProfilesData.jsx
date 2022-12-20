@@ -1,4 +1,11 @@
 import React from "react";
+import { BiCoinStack } from "react-icons/bi";
+import { MdEventAvailable } from "react-icons/md";
+import { BsSave2, BsShare } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
+import { BsFillChatDotsFill } from "react-icons/bs";
+import { RiSuitcaseLine } from "react-icons/ri";
+import { IoLocationOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 
 export default function ProfilesData({
@@ -17,7 +24,6 @@ export default function ProfilesData({
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -300, opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
-      className="m-1.5 grid grid-cols-3 gap-x-5 gap-y-7"
     >
       <div className="CARD shadow-md  shadow-rose-100">
         <div className="flex bg-gradient-to-r from-indigo-300 to-purple-400 rounded-md p-2">
@@ -39,7 +45,7 @@ export default function ProfilesData({
           </div>
         </div>
         <div className="skills-section mt-2">
-          //todo: map over skills array and show each skills
+          {/* //todo: map over skills array and show each skills */}
           <p className="font-medium text-gray-600 inline-flex items-center gap-1">
             <BiCoinStack className="inline text-xl"></BiCoinStack> SKILLS
           </p>
@@ -58,7 +64,7 @@ export default function ProfilesData({
             </p>
           </div>
         </div>
-        //todo: map over AVAILABILITIES array & show each avl
+        {/* //todo: map over AVAILABILITIES array & show each avl */}
         <div className="avl-section">
           <p className="font-medium text-gray-600 inline-flex items-center gap-1 mt-2">
             <MdEventAvailable></MdEventAvailable> AVAILABILITIES
