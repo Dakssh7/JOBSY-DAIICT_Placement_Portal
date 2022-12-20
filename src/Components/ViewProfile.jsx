@@ -14,10 +14,10 @@ function ViewProfile() {
     linkedInURL = null;
   return (
     <motion.div
-      initial={{ scaleY: 0 }}
-      animate={{ scaleY: 1 }}
-      exit={{ scaleY: 0 }}
-      transition={{ duration: 0.8 }}
+      initial={{ y: 300, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -300, opacity: 0 }}
+      transition={{ duration: 1, type: "tween" }}
       className="grid grid-cols-4 gap-4"
     >
       <div className="CARD p-1">

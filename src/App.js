@@ -14,15 +14,15 @@ function App() {
   return (
     <>
       <Navbar />
-      <ViewProfile></ViewProfile>
-      <AnimatePresence exitBeforeEnter mode="wait" initial={false}>
-        {/* <Routes location={location} key={location.pathname}>
+      {/* <ViewProfile></ViewProfile> */}
+      <AnimatePresence  mode="wait" initial={false}>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Landingpage />} />
           <Route path="/explorework" element={<Explorework />} />
           <Route path="/hiretalent" element={<Profiles />} />
           <Route path="/getstarted" element={<Login />} />
           <Route path="*" element={<h1> Not Found</h1>} />
-        </Routes> */}
+        </Routes>
       </AnimatePresence>
     </>
   );

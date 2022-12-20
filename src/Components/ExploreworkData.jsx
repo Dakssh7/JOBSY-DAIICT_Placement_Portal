@@ -21,10 +21,10 @@ function ExploreworkData({
     <>
       <Homedata />
       <motion.div
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 1 }}
-        exit={{ scaleY: 0 }}
-        transition={{ duration: 0.8 }}
+        initial={{ y: 300, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 300, opacity: 0 }}
+        transition={{ duration: 1, type: "tween" }}
         className="mt-2"
       >
         <div className="z-10 flex w-full items-center justify-start gap-3 bg-white p-3">

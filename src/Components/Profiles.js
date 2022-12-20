@@ -12,10 +12,10 @@ import { motion } from "framer-motion";
 function Profiles() {
   return (
     <motion.div
-      initial={{ scaleY: 0 }}
-      animate={{ scaleY: 1 }}
-      exit={{ scaleY: 0 }}
-      transition={{ duration: 0.8 }}
+      initial={{ y: 300, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -300, opacity: 0 }}
+      transition={{ duration: 1, type: "tween" }}
       className="m-1.5 grid grid-cols-3 gap-x-5 gap-y-7"
     >
       <div className="CARD shadow-md  shadow-rose-100">

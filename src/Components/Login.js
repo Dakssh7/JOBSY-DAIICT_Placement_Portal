@@ -5,12 +5,13 @@ import login_bg from "../Assets/login_bg.jpg";
 import { motion } from "framer-motion";
 
 function Login() {
+  fetch("http://localhost:5000/api/login").then((res) => console.log(res));
   return (
     <motion.div
-      initial={{ scaleX: 0 }}
-      animate={{ scaleX: 1 }}
-      exit={{ scaleX: 0 }}
-      transition={{ duration: 0.8 }}
+      initial={{ y: 300, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -300, opacity: 0 }}
+      transition={{ duration: 1, type: "tween" }}
       style={{
         backgroundImage: `url(${login_bg})`,
       }}
