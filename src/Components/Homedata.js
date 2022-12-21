@@ -81,7 +81,6 @@ function Homedata({ setUsers }) {
           </div>
         </div>
       </blockquote>
-      {/* fixme: button shadow - shadow-lg shadow-slate-200 */}
       <div className="grid grid-cols-3  gap-5 w-full my-2 p-3">
         <label>
           <BiCoinStack className="inline mr-1 text-xl"></BiCoinStack>

@@ -1,13 +1,14 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { BiCoinStack } from "react-icons/bi";
-import { MdEventAvailable } from "react-icons/md";
-import { BsSave2, BsShare } from "react-icons/bs";
+import { BsFillChatDotsFill, BsSave2, BsShare } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
-import { BsFillChatDotsFill } from "react-icons/bs";
-import { RiSuitcaseLine } from "react-icons/ri";
 import { IoLocationOutline } from "react-icons/io5";
-import { motion } from "framer-motion";
+import { MdEventAvailable } from "react-icons/md";
+import { RiSuitcaseLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import axios from "../axiosConfig/axios";
+
 
 export default function ProfilesData({
   userID,
@@ -20,8 +21,14 @@ export default function ProfilesData({
   availabilities,
 }) {
   let navigate = useNavigate();
-  function clickHandler() {
-    navigate(`/hiretalent/${userID}`);
+
+  function viewHandler(id) {
+    navigate(`/hiretalent/${id}`);
+  }
+
+  function shareHandler(id) {
+    navigator.clipboard.writeText(`${axios.defaults.baseURL}/hiretalent/${id}`);
+    alert("link copied to clipboard!");
   }
   return (
     <motion.div
@@ -50,7 +57,6 @@ export default function ProfilesData({
           </div>
         </div>
         <div className="skills-section mt-2">
-          {/* //todo: map over skills array and show each skills */}
           <p className="font-medium text-gray-600 inline-flex items-center gap-1">
             <BiCoinStack className="inline text-xl"></BiCoinStack> SKILLS
           </p>
@@ -69,7 +75,6 @@ export default function ProfilesData({
             </p>
           </div>
         </div>
-        {/* //todo: map over AVAILABILITIES array & show each avl */}
         <div className="avl-section">
           <p className="font-medium text-gray-600 inline-flex items-center gap-1 mt-2">
             <MdEventAvailable></MdEventAvailable> AVAILABILITIES
@@ -90,14 +95,17 @@ export default function ProfilesData({
           </div>
         </div>
         <div className="buttons-section flex justify-around w-full mt-2">
-          <button className="items-baseline p-2 my-3 w-fit justify-center font-medium transition-all duration-300 ease-in-out disabled:opacity-50 bg-gradient-to-r from-indigo-300 to-purple-400 text-gray-900 hover:bg-gradient-to-t hover:from-indigo-400 hover:to-purple-500  bg-opacity-20 hover:bg-opacity-30 active:bg-opacity-40 border-none rounded-md   ">
+          <button
+            onClick={() => shareHandler(userID)}
+            className="items-baseline p-2 my-3 w-fit justify-center font-medium transition-all duration-300 ease-in-out disabled:opacity-50 bg-gradient-to-r from-indigo-300 to-purple-400 text-gray-900 hover:bg-gradient-to-t hover:from-indigo-400 hover:to-purple-500  bg-opacity-20 hover:bg-opacity-30 active:bg-opacity-40 border-none rounded-md   "
+          >
             <BsShare className="inline mr-1"></BsShare> SHARE
           </button>
           <button className="items-baseline p-2 my-3 w-fit justify-center font-medium transition-all duration-300 ease-in-out disabled:opacity-50 bg-gradient-to-r from-indigo-300 to-purple-400 text-gray-900 hover:bg-gradient-to-t hover:from-indigo-400 hover:to-purple-500  bg-opacity-20 hover:bg-opacity-30 active:bg-opacity-40 border-none rounded-md   ">
             <BsSave2 className="inline mr-"></BsSave2> SAVE
           </button>
           <button
-            onClick={() => clickHandler()}
+            onClick={() => viewHandler(userID)}
             className=" items-baseline p-2 my-3 w-fit justify-center font-medium transition-all duration-300 ease-in-out disabled:opacity-50 bg-gradient-to-r from-indigo-300 to-purple-400 text-gray-900 hover:bg-gradient-to-t hover:from-indigo-400 hover:to-purple-500  border-none rounded-md   "
           >
             <CgProfile className="inline mr-1  mb-[3px]" />

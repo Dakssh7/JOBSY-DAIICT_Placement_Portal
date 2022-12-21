@@ -1,10 +1,24 @@
-import React from "react";
-import { BsGithub } from "react-icons/bs";
-import { IoIosPeople } from "react-icons/io";
-import login_bg from "../Assets/login_bg.jpg";
 import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { IoIosPeople } from "react-icons/io";
+import { MdOutlineEmail, MdOutlinePassword } from "react-icons/md";
+import login_bg from "../Assets/login_bg.jpg";
+import axios from "../axiosConfig/axios";
 
 function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  function submitHandler() {
+    axios
+      .post("/auth/login", {
+        username,
+        password,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+    setPassword("");
+    setUsername("");
+  }
   return (
     <motion.div
       initial={{ y: 300, opacity: 0 }}
@@ -22,11 +36,38 @@ function Login() {
         </h2>
         <p className="tracking-wide leading-relaxed mt-7 max-w-2xl text-xl">
           Develop your portfolio, win challenges, and be hired from the front.
-          Our goal is to build together, so come join us.
         </p>
-        <button className="mt-9 text-2xl flex mx-auto w-fit px-5 py-3 rounded-md justify-center text-white transition-all duration-200 ease-in-out bg-[#0f0f0f] hover:bg-[#010101] active:bg-black">
-          <BsGithub className="mr-2 mt-1" /> GitHub
-        </button>
+        <div className="mt-3 rounded-md px-3">
+          <label>
+            <MdOutlineEmail className="inline mr-1 text-xl text-gray-800"></MdOutlineEmail>
+            <input
+              type="text"
+              className="bg-transparent placeholder-black  p-1 w-[90%] pt-2 focus:border-b focus:border-black text-black focus:outline-none"
+              placeholder="type username"
+              name="tech"
+              id="tech"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </label>
+          <label>
+            <MdOutlinePassword className="inline mr-1 text-xl text-gray-800"></MdOutlinePassword>
+            <input
+              type="password"
+              className="mb-2 bg-transparent placeholder-black  p-1 w-[90%] pt-2 focus:border-b focus:border-black text-black focus:outline-none"
+              placeholder="type password"
+              name="city"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
+          <button
+            onClick={() => submitHandler()}
+            className="my-1 font-bold border px-3 py-1 rounded-md border-black"
+          >
+            LOGIN
+          </button>
+        </div>
       </div>
     </motion.div>
   );
