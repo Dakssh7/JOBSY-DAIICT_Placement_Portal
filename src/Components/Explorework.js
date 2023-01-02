@@ -5,6 +5,9 @@ import ExploreworkData from "./ExploreworkData";
 import Homedata from "./Homedata";
 import { HashLoader } from "react-spinners";
 
+// TODO: THIS SHOWS ALL THE PROJECTS
+
+
 function Explorework() {
   const [users, setUsers] = useState();
   const getData = () => {
@@ -17,8 +20,8 @@ function Explorework() {
     getData();
   }, []);
   useEffect(() => {
-    if (users && users.length===0) {
-      alert("Your search returned no result!")
+    if (users && users.length === 0) {
+      alert("Your search returned no result!");
     }
   }, [users]);
 
@@ -32,9 +35,9 @@ function Explorework() {
 
   return (
     <motion.div
-      initial={{ y: 300, opacity: 0 }}
+      initial={{ y: "100vh", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -300, opacity: 0 }}
+      exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
     >
       <Homedata setUsers={setUsers} />

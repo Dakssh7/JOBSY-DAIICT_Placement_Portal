@@ -6,9 +6,9 @@ import { CgProfile } from "react-icons/cg";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdEventAvailable } from "react-icons/md";
 import { RiSuitcaseLine } from "react-icons/ri";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "../axiosConfig/axios";
-
 
 export default function ProfilesData({
   userID,
@@ -21,9 +21,11 @@ export default function ProfilesData({
   availabilities,
 }) {
   let navigate = useNavigate();
-
+  const user = useSelector((state) => state.user.user);
   function viewHandler(id) {
-    navigate(`/hiretalent/${id}`);
+    user
+      ? navigate(`/hiretalent/${id}`)
+      : alert('you need to login first')
   }
 
   function shareHandler(id) {
@@ -32,9 +34,9 @@ export default function ProfilesData({
   }
   return (
     <motion.div
-      initial={{ y: 300, opacity: 0 }}
+      initial={{ y: "100vh", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -300, opacity: 0 }}
+      exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
     >
       <div className="CARD shadow-md  shadow-rose-100">

@@ -29,9 +29,9 @@ function Homedata({ setUsers }) {
   }
   return (
     <motion.div
-      initial={{ y: 300, opacity: 0 }}
+      initial={{ y: "100vh", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -300, opacity: 0 }}
+      exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
       id="talent_section"
       className=" flex rounded-md shadow-inner  my-18 flex-col items-center justify-center gap-5 "

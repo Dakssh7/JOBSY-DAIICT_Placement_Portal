@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 export default function Landingpage() {
   return (
     <motion.div
-      initial={{ y: 300, opacity: 0 }}
+      initial={{ y: '100vh', opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -300, opacity: 0 }}
+      exit={{ y: '-100vh', opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
       className="grid grid-cols-2 bg-[#faf9ff] h-screen w-screen bg-contain bg-no-repeat bg-right"
       style={{ backgroundImage: `url(${landing_bg})` }}

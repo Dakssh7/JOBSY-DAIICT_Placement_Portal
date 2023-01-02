@@ -6,7 +6,7 @@ import {
   BsGithub,
   BsLinkedin,
   BsSave2,
-  BsShare
+  BsShare,
 } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdEventAvailable } from "react-icons/md";
@@ -37,9 +37,9 @@ function ViewProfile() {
   }
   return (
     <motion.div
-      initial={{ y: 300, opacity: 0 }}
+      initial={{ y: "100vh", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -300, opacity: 0 }}
+      exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
       className="grid grid-cols-4 gap-4"
     >

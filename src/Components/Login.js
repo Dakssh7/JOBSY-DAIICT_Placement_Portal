@@ -2,28 +2,35 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { IoIosPeople } from "react-icons/io";
 import { MdOutlineEmail, MdOutlinePassword } from "react-icons/md";
+import { useDispatch } from "react-redux";
 import login_bg from "../Assets/login_bg.jpg";
 import axios from "../axiosConfig/axios";
+import { setUser } from "../redux/userSlice";
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("kminchelle");
+  const [password, setPassword] = useState("0lelplR");
+  const dispatch = useDispatch();
   function submitHandler() {
     axios
       .post("/auth/login", {
         username,
         password,
       })
-      .then((res) => console.log(res))
-      .catch((err) => console.error(err));
+      .then((res) => {
+        dispatch(setUser(res.data));
+      })
+      .catch((err) => {
+        alert("Wrong username or password,\nPlease try again!");
+      });
     setPassword("");
     setUsername("");
   }
   return (
     <motion.div
-      initial={{ y: 300, opacity: 0 }}
+      initial={{ y: "100vh", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -300, opacity: 0 }}
+      exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
       style={{
         backgroundImage: `url(${login_bg})`,
