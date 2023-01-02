@@ -41,15 +41,15 @@ export default function ProfilesData({
       exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
     >
-      <div className="CARD shadow-md  shadow-rose-100">
+      <div className="CARD shadow-md  ">
         <div className="flex gradient rounded-md p-2">
           <img
             src={`${userImage}`}
             alt={userImageALT}
             className="h-16 w-16 rounded-full  mr-4 bg-transparent"
           />
-          <div className="">
-            <h1 className="font-bold text-lg">{userName}</h1>
+          <div>
+            <h1 className="font-bold ml-1 text-lg">{userName}</h1>
             <p>
               <RiSuitcaseLine className="inline text-lg mb-1"></RiSuitcaseLine>
               {userDesignation}
@@ -61,25 +61,25 @@ export default function ProfilesData({
           </div>
         </div>
         <div className="skills-section mt-2">
-          <p className="font-medium text-gray-600 inline-flex items-center gap-1">
+          <p className="font-medium text-neutral-200 inline-flex items-center gap-1">
             <BiCoinStack className="inline text-xl"></BiCoinStack> SKILLS
           </p>
           <div className="text-xs m-2 font-medium">
-            <p className="blue-pill">HTML</p>
-            <p className="blue-pill">HTML</p>
-            <p className="blue-pill">HTML</p>
-            <p className="blue-pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
           </div>
         </div>
         <div className="avl-section">
-          <p className="font-medium text-gray-600 inline-flex items-center gap-1 mt-2">
+          <p className="font-medium text-neutral-200 inline-flex items-center gap-1 mt-2">
             <MdEventAvailable></MdEventAvailable> AVAILABILITIES
           </p>
           <div className="text-xs m-2 font-medium">
-            <p className="black-pill">HTML</p>
-            <p className="black-pill">HTML</p>
-            <p className="black-pill">HTML</p>
-            <p className="black-pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
           </div>
         </div>
         <div className="buttons-section flex justify-around w-full mt-2">

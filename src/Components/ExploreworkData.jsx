@@ -23,9 +23,9 @@ function ExploreworkData({
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 300, opacity: 0 }}
         transition={{ duration: 1, type: "tween" }}
-        className="mt-2 border  rounded-md shadow-md"
+        className="mt-2 border border-sky-200  rounded-md shadow-md"
       >
-        <div className="z-10 flex w-full items-center justify-start gap-3 bg-white p-3">
+        <div className="flex w-full items-center justify-start gap-3  p-3">
           <img
             loading="lazy"
             className="aspect-square object-cover rounded-full h-12 w-12"
@@ -33,11 +33,9 @@ function ExploreworkData({
             alt={imgALT}
           />
           <div className="flex w-full flex-col items-start justify-center">
-            <h1 className="line-clamp-1 font-medium text-black">{heading}</h1>
+            <h1 className="line-clamp-1 font-medium">{heading}</h1>
             <div className="flex w-full items-center justify-between">
-              <p className="line-clamp-1 text-sm text-gray-700">
-                @{userHandle}
-              </p>
+              <p className="line-clamp-1 text-sm">@{userHandle}</p>
             </div>
           </div>
         </div>
@@ -76,15 +74,9 @@ function ExploreworkData({
           </div>
         </div>
         <div className="flex w-full mt-[-1em] font-medium items-start justify-start gap-2 p-3">
-          <span className="blue-pill">
-            html
-          </span>
-          <span className="blue-pill">
-            css
-          </span>
-          <span className="blue-pill">
-            javascript
-          </span>
+          <span className="pill">html</span>
+          <span className="pill">css</span>
+          <span className="pill">javascript</span>
         </div>
       </motion.div>
     </>

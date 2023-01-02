@@ -31,7 +31,7 @@ function ViewProfile() {
   if (!user) {
     return (
       <div className="flex h-[80vh] justify-center">
-        <HashLoader color="#ba8dfc" className="self-center" />
+        <HashLoader color="#38bdf8" className="self-center" />
       </div>
     );
   }
@@ -44,19 +44,19 @@ function ViewProfile() {
       className="grid grid-cols-4 gap-4"
     >
       <div className="CARD p-1">
-        <div className="flex gradient  p-2">
+        <div className="flex gradient p-2">
           <img
             src={`${user.image}`}
             alt="user image"
-            className="h-16 w-16 rounded-full self-center mr-4 bg-transparent"
+            className="h-16 w-16 rounded-full mr-4 bg-transparent"
           />
           <div>
-            <h1 className="font-bold text-lg">{user.username}</h1>
-            <p className="text-black">
+            <h1 className="font-bold ml-1 text-lg">{user.username}</h1>
+            <p>
               <RiSuitcaseLine className=" inline text-lg mb-1"></RiSuitcaseLine>
               {user.company.title}
             </p>
-            <p className="text-black">
+            <p>
               <IoLocationOutline className=" inline text-lg mb-1"></IoLocationOutline>
               {user.address.city}
             </p>
@@ -71,25 +71,25 @@ function ViewProfile() {
           </a>
         </div>
         <div className="skills-section mt-2">
-          <p className="font-medium text-gray-600 inline-flex items-center gap-1">
+          <p className="font-medium text-neutral-200 inline-flex items-center gap-1">
             <BiCoinStack className="inline text-xl"></BiCoinStack> SKILLS
           </p>
           <div className="text-xs m-2 font-medium">
-            <p className="blue-pill">HTML</p>
-            <p className="blue-pill">HTML</p>
-            <p className="blue-pill">HTML</p>
-            <p className="blue-pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
           </div>
         </div>
         <div className="avl-section">
-          <p className="font-medium text-gray-600 inline-flex items-center gap-1 mt-2">
+          <p className="font-medium text-neutral-200 inline-flex items-center gap-1 mt-2">
             <MdEventAvailable></MdEventAvailable> AVAILABILITIES
           </p>
           <div className="text-xs m-2 font-medium">
-            <p className="black-pill">HTML</p>
-            <p className="black-pill">HTML</p>
-            <p className="black-pill">HTML</p>
-            <p className="black-pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
+            <p className="pill">HTML</p>
           </div>
         </div>
         <div className="buttons-section flex justify-around w-full mt-2">

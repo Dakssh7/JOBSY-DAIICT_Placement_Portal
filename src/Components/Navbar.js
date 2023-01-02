@@ -8,25 +8,25 @@ import { Usercard } from "./Usercard";
 function Navbar() {
   const user = useSelector((state) => state.user.user);
   return (
-    <div className="flex items-center  justify-between mb-2 text-lg font-medium p-1 text-gray-700">
+    <div className="flex items-center  justify-between mb-2 text-lg font-medium p-1 ">
       <Link to="/">
         <img className="h-12 ml-2" src={`${logo}`} alt="logo" />
       </Link>
       <ul className="flex items-center px-3 my-1 last:pr-0">
-        <li className="mx-10 hover:text-black">
+        <li className="navbar-li">
           <Link to="/explorework"> Explore Work</Link>
         </li>
-        <li className="mx-10 hover:text-black">
+        <li className="navbar-li">
           <Link to="/hiretalent"> Hire Talents</Link>
         </li>
-        <li className="mx-10 hover:text-black">
+        <li className="navbar-li">
           <Link to="/getstarted"> Get Started</Link>
         </li>
-        <div className="w-10 h-10 mr-1 ">
+        <div className="w-10 h-10 mr-1">
           {user ? (
             <Usercard user={user} />
           ) : (
-            <FaUserCircle size={40} />
+            <FaUserCircle size={40} className='bg-transparent'/>
           )}
         </div>
       </ul>

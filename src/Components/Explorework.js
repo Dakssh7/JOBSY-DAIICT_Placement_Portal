@@ -7,9 +7,7 @@ import { HashLoader } from "react-spinners";
 
 // TODO: THIS SHOWS ALL THE PROJECTS
 
-
 function Explorework() {
-  
   const [users, setUsers] = useState();
   const getData = () => {
     axios
@@ -29,7 +27,7 @@ function Explorework() {
   if (!users) {
     return (
       <div className="flex h-[80vh] justify-center">
-        <HashLoader color="#ba8dfc" className="self-center" />
+        <HashLoader color="#38bdf8" className="self-center" />
       </div>
     );
   }
