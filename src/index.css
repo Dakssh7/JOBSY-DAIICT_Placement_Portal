@@ -2,7 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    margin: 0;
-    padding: 0;
+@layer components {
+  .btn-primary {
+    @apply items-baseline p-2 my-3 w-fit justify-center font-medium transition-all duration-300 ease-in-out disabled:opacity-50 gradient text-gray-900 hover:bg-gradient-to-t hover:from-indigo-400 hover:to-purple-500  bg-opacity-20 hover:bg-opacity-30 active:bg-opacity-40 border-none rounded-md;
+  }
+  .blue-pill {
+    @apply border m-1 inline border-blue-600 rounded-md py-1 px-2;
+  }
+  .black-pill {
+    @apply border m-1 inline border-gray-700 rounded-md py-1 px-2;
+  }
+  .gradient {
+    @apply bg-gradient-to-r from-indigo-300 to-purple-400;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }

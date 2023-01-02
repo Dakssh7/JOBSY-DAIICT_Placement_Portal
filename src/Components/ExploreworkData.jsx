@@ -1,9 +1,8 @@
-import React from "react";
-import Homedata from "./Homedata";
-import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
-import { FaRegCommentDots } from "react-icons/fa";
-import { BsShare, BsSave } from "react-icons/bs";
 import { motion } from "framer-motion";
+import React from "react";
+import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
+import { BsSave, BsShare } from "react-icons/bs";
+import { FaRegCommentDots } from "react-icons/fa";
 
 function ExploreworkData({
   userID,
@@ -77,13 +76,13 @@ function ExploreworkData({
           </div>
         </div>
         <div className="flex w-full mt-[-1em] font-medium items-start justify-start gap-2 p-3">
-          <span className="border rounded-md py-0  px-2 w-min border-blue-600">
+          <span className="blue-pill">
             html
           </span>
-          <span className="border rounded-md py-0  px-2 w-min border-blue-600">
+          <span className="blue-pill">
             css
           </span>
-          <span className="border rounded-md py-0  px-2 w-min border-blue-600">
+          <span className="blue-pill">
             javascript
           </span>
         </div>

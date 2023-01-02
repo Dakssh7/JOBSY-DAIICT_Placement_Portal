@@ -37,9 +37,9 @@ function Login() {
       }}
       className="grid grid-cols-3 h-screen bg-auto bg-no-repeat bg-right bg-opacity-0"
     >
-      <div className="ml-2 bg-gradient-to-r from-indigo-300 to-purple-400 m-auto shadow-2xl px-24 py-28 border border-gray-300 rounded-md text-center">
+      <div className="ml-2 gradient m-auto shadow-2xl px-24 py-28 rounded-md text-center">
         <h2 className="text-3xl mt-[-70px]  font-bold tracking-tight">
-          <IoIosPeople className="inline " /> Log-in / Sign-up
+          <IoIosPeople className="inline" /> Log-in / Sign-up
         </h2>
         <p className="tracking-wide leading-relaxed mt-7 max-w-2xl text-xl">
           Develop your portfolio, win challenges, and be hired from the front.
@@ -70,7 +70,7 @@ function Login() {
           </label>
           <button
             onClick={() => submitHandler()}
-            className="my-1 font-bold border px-3 py-1 rounded-md border-black"
+            className="mt-1 font-bold border px-3 py-1 rounded-md border-black"
           >
             LOGIN
           </button>
