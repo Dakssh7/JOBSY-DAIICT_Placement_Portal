@@ -36,9 +36,9 @@ const Signin = () => {
       style={{
         backgroundImage: `url(${login_bg})`,
       }}
-      className="h-[91vh] flex items-center brightness-50 bg-no-repeat bg-contain bg-right"
+      className="h-[91vh] flex items-center bg-right bg-no-repeat"
     >
-      <div className="bg-neutral-600 max-w-[35%] m-2 px-8 py-10 rounded-md text-center">
+      <div className="gradient max-w-[35%] ml-4 px-8 py-12 rounded-md text-center">
         <h2 className="text-3xl font-bold tracking-tight">
           <IoIosPeople className="inline" /> Log-in / Sign-up
         </h2>

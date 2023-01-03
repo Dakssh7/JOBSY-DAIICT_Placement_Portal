@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from "../Assets/logo.png";
-import { Usercard } from "./Usercard";
-import { logout } from "../redux/userSlice";
-import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import logo from "../Assets/logo.png";
+import { logout } from "../redux/userSlice";
+import { Usercard } from "./Usercard";
 
 function Navbar() {
   let navigate = useNavigate();
@@ -28,18 +27,18 @@ function Navbar() {
 
   return (
     <div className="flex items-center  justify-between mb-2 text-lg font-medium p-1 ">
-      <NavLink to="/">
+      <NavLink activeClassName='active' to="/">
         <img className="h-12 ml-2 brightness-150" src={`${logo}`} alt="logo" />
       </NavLink>
       <ul className="flex items-center px-3 my-1 last:pr-0">
         <li className="navbar-li">
-          <NavLink to="/explorework"> Explore Work</NavLink>
+          <NavLink activeClassName='active' to="/explorework"> Explore Work</NavLink>
         </li>
         <li className="navbar-li">
-          <NavLink to="/hiretalent"> Hire Talents</NavLink>
+          <NavLink activeClassName='active' to="/hiretalent"> Hire Talents</NavLink>
         </li>
         <li className="navbar-li">
-          <NavLink to="/getstarted"> Get Started</NavLink>
+          <NavLink activeClassName='active' to="/getstarted"> Get Started</NavLink>
         </li>
         <li
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}

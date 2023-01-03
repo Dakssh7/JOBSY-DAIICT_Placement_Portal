@@ -26,7 +26,9 @@ export default function ProfilesData({
   availabilities,
 }) {
   let navigate = useNavigate();
+
   const user = useSelector((state) => state.user.user);
+  
   function viewHandler(id) {
     user ? navigate(`/hiretalent/${id}`) : notLoggedIn();
   }
@@ -35,21 +37,12 @@ export default function ProfilesData({
     setTimeout(() => {
       navigate("/getstarted");
     }, 2000);
-    toast.error("You need to login first!", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+    toast.error("You need to login first!");
   }
 
   function shareHandler(id) {
     navigator.clipboard.writeText(`${axios.defaults.baseURL}/hiretalent/${id}`);
-    alert("link copied to clipboard!");
+    toast.success('Link copied to clipboard')
   }
   return (
     <motion.div

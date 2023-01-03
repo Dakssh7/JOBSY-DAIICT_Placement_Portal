@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
-import { BsSave, BsShare } from "react-icons/bs";
+import { BsSave } from "react-icons/bs";
+import { RiSendPlaneFill } from "react-icons/ri";
 import { FaRegCommentDots } from "react-icons/fa";
 
 function ExploreworkData({
@@ -39,36 +40,35 @@ function ExploreworkData({
             </div>
           </div>
         </div>
-        <div className="relative flex w-fit rounded-sm items-start justify-start gap-4 overflow-hidden border-card">
-          <img className="aspect-square" src={projectVideoSRC}></img>
+        <div className="flex items-start w-fit rounded-sm bg-blue-100">
+          <img className="object-contain aspect-video" src={projectVideoSRC}></img>
         </div>
         <div className="d flex w-1/3 items-end justify-between p-3">
           <div className="flex w-full flex-col items-start justify-center">
             <div className="flex w-full items-center justify-between gap-3">
               <div className="mb-1 flex w-full items-center justify-start gap-3">
-                <button className=" text-base inline-flex items-center justify-start">
-                  <AiOutlineHeart></AiOutlineHeart> {likesCount}
+                <button className="text-base inline-flex items-center justify-start">
+                  <AiOutlineHeart className="mr-1"></AiOutlineHeart>{likesCount}
                 </button>
-                <button className=" text-base inline-flex items-center justify-start">
-                  <FaRegCommentDots></FaRegCommentDots> {commentsCount}
+                <button className="text-base inline-flex items-center justify-start">
+                  <FaRegCommentDots className="mr-1"></FaRegCommentDots> {commentsCount}
                 </button>
-                <button className=" text-base inline-flex items-center justify-start">
-                  <AiOutlineEye></AiOutlineEye> {viewsCount}
+                <button className="text-base inline-flex items-center justify-start">
+                  <AiOutlineEye className="mr-1"></AiOutlineEye> {viewsCount}
                 </button>
               </div>
               <div className="relative undefined">
                 <div
                   className="active:outline-none"
-                  id="headlessui-popover-button-:re:"
                   aria-expanded="false"
                 >
                   <button className="flex items-center justify-center">
-                    <BsShare></BsShare>
+                    <RiSendPlaneFill className="m-1"></RiSendPlaneFill>
                   </button>
                 </div>
               </div>
               <button className="ml-auto">
-                <BsSave></BsSave>
+                <BsSave className="m-1"></BsSave>
               </button>
             </div>
           </div>
