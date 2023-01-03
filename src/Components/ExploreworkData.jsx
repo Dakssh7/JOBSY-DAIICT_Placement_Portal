@@ -39,8 +39,8 @@ function ExploreworkData({
             </div>
           </div>
         </div>
-        <div className="relative flex w-fit rounded-sm items-start justify-start gap-4 overflow-hidden border-y-[1px] border-card">
-          <iframe className="aspect-square" src={projectVideoSRC}></iframe>
+        <div className="relative flex w-fit rounded-sm items-start justify-start gap-4 overflow-hidden border-card">
+          <img className="aspect-square" src={projectVideoSRC}></img>
         </div>
         <div className="d flex w-1/3 items-end justify-between p-3">
           <div className="flex w-full flex-col items-start justify-center">

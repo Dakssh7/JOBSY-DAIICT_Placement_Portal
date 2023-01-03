@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 export default function Landingpage() {
   return (
     <motion.div
-      initial={{ y: '100vh', opacity: 0 }}
+      initial={{ y: "100vh", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: '-100vh', opacity: 0 }}
+      exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
-      className="grid grid-cols-2 bg-[#faf9ff] h-screen w-screen bg-contain bg-no-repeat bg-right"
+      className="grid grid-cols-2 bg-[#27272a] h-screen w-screen bg-contain bg-no-repeat bg-right bg-blend-overlay"
       style={{ backgroundImage: `url(${landing_bg})` }}
     >
-      <div className="flex justify-center w-full rounded-md ">
+      <div className="flex justify-center w-full rounded-md bg-blend-overlay">
         <Typed
           className="block text-6xl m-auto text-opacity-400 text-[#896bff] font-bold"
           strings={[

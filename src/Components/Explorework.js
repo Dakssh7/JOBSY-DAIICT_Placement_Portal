@@ -4,6 +4,8 @@ import axios from "../axiosConfig/axios";
 import ExploreworkData from "./ExploreworkData";
 import Homedata from "./Homedata";
 import { HashLoader } from "react-spinners";
+import { toast } from "react-toastify";
+import Toast from "../features/Toast";
 
 // TODO: THIS SHOWS ALL THE PROJECTS
 
@@ -20,7 +22,7 @@ function Explorework() {
   }, []);
   useEffect(() => {
     if (users && users.length === 0) {
-      alert("Your search returned no result!");
+        toast.info("Your search returned no result!");
     }
   }, [users]);
 
@@ -59,6 +61,7 @@ function Explorework() {
           );
         })}
       </div>
+      <Toast />
     </motion.div>
   );
 }

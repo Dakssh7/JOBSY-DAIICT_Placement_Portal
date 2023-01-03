@@ -4,12 +4,14 @@ import { BiCoinStack } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import { motion } from "framer-motion";
 import axios from "../axiosConfig/axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Homedata({ setUsers }) {
   const [tech, setTech] = useState("");
   const [city, setCity] = useState("");
   function clickHandler() {
-    if (!tech && !city) alert("provide atleast one value : tech stack or city");
+    if (!tech && !city) toast.error("Please provide either Technology or City");
     else {
       var search = "";
       if (tech) {

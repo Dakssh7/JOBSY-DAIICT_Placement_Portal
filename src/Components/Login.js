@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import login_bg from "../Assets/login_bg.jpg";
 import axios from "../axiosConfig/axios";
 import { setUser } from "../redux/userSlice";
+import Toast from "../features/Toast";
+import { toast } from "react-toastify";
 
 function Login() {
   const [username, setUsername] = useState("kminchelle");
@@ -21,7 +23,7 @@ function Login() {
         dispatch(setUser(res.data));
       })
       .catch((err) => {
-        alert("Wrong username or password,\nPlease try again!");
+        toast.error("Wrong username or password,\nPlease try again!");
       });
     setPassword("");
     setUsername("");
@@ -35,7 +37,7 @@ function Login() {
       style={{
         backgroundImage: `url(${login_bg})`,
       }}
-      className="grid grid-cols-3 h-screen bg-auto bg-no-repeat bg-right bg-opacity-0"
+      className="grid grid-cols-3 h-screen overflow-hidden bg-no-repeat bg-right bg-contain brightness-75"
     >
       <div className="ml-2 gradient m-auto shadow-2xl px-24 py-28 rounded-md text-center">
         <h2 className="text-3xl mt-[-70px]  font-bold tracking-tight">
@@ -46,10 +48,10 @@ function Login() {
         </p>
         <div className="mt-3 rounded-md px-3">
           <label>
-            <MdOutlineEmail className="inline mr-1 text-xl text-gray-800"></MdOutlineEmail>
+            <MdOutlineEmail className="inline mr-1 text-xl"></MdOutlineEmail>
             <input
               type="text"
-              className="bg-transparent placeholder-black  p-1 w-[90%] pt-2 focus:border-b focus:border-black text-black focus:outline-none"
+              className="bg-transparent placeholder:text-white p-1 w-[90%] pt-2 focus:border-b focus:border-black  focus:outline-none"
               placeholder="type username"
               name="tech"
               id="tech"
@@ -58,24 +60,22 @@ function Login() {
             />
           </label>
           <label>
-            <MdOutlinePassword className="inline mr-1 text-xl text-gray-800"></MdOutlinePassword>
+            <MdOutlinePassword className="inline mr-1 text-xl "></MdOutlinePassword>
             <input
               type="password"
-              className="mb-2 bg-transparent placeholder-black  p-1 w-[90%] pt-2 focus:border-b focus:border-black text-black focus:outline-none"
+              className="mb-2 bg-transparent placeholder:text-white p-1 w-[90%] pt-2 focus:border-b focus:border-black  focus:outline-none"
               placeholder="type password"
               name="city"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
-          <button
-            onClick={() => submitHandler()}
-            className="mt-1 font-bold border px-3 py-1 rounded-md border-black"
-          >
+          <button onClick={() => submitHandler()} className="btn-primary px-6 bg-transparent">
             LOGIN
           </button>
         </div>
       </div>
+      <Toast />
     </motion.div>
   );
 }

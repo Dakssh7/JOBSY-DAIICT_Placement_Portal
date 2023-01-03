@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <div className="flex items-center  justify-between mb-2 text-lg font-medium p-1 ">
       <Link to="/">
-        <img className="h-12 ml-2" src={`${logo}`} alt="logo" />
+        <img className="h-12 ml-2 brightness-150" src={`${logo}`} alt="logo" />
       </Link>
       <ul className="flex items-center px-3 my-1 last:pr-0">
         <li className="navbar-li">

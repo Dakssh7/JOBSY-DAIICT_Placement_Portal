@@ -13,6 +13,7 @@ import { RiSuitcaseLine } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "../axiosConfig/axios";
+import { toast } from "react-toastify";
 
 export default function ProfilesData({
   userID,
@@ -27,7 +28,23 @@ export default function ProfilesData({
   let navigate = useNavigate();
   const user = useSelector((state) => state.user.user);
   function viewHandler(id) {
-    user ? navigate(`/hiretalent/${id}`) : alert("you need to login first");
+    user ? navigate(`/hiretalent/${id}`) : notLoggedIn();
+  }
+
+  function notLoggedIn() {
+    setTimeout(() => {
+      navigate("/getstarted");
+    }, 2000);
+    toast.error("You need to login first!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   }
 
   function shareHandler(id) {

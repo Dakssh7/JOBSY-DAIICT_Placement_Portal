@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { HashLoader } from "react-spinners";
 import axios from "../axiosConfig/axios";
 import ProfilesData from "./ProfilesData";
-
+import Toast from "../features/Toast";
+  
 // TODO: THIS SHOWS ALL THE USER PROFILES
 
 function Profiles() {
@@ -47,6 +48,7 @@ function Profiles() {
           />
         );
       })}
+      <Toast />
     </motion.div>
   );
 }
