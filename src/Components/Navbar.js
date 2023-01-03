@@ -1,43 +1,59 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../Assets/logo.png";
 import { Usercard } from "./Usercard";
-import { logout } from '../redux/userSlice'
+import { logout } from "../redux/userSlice";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 function Navbar() {
+  let navigate = useNavigate();
+
   const user = useSelector((state) => state.user.user);
+  const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const dispatch = useDispatch();
+
   function handleLogOut() {
     dispatch(logout());
     setIsOptionsOpen(false);
   }
-  const [isOptionsOpen, setIsOptionsOpen] = useState(false)
+
+  function viewProfileHandler() {
+    user
+      ? navigate(`/hiretalent/${user.id}`)
+      : toast.error("You need to login first!");
+  }
+
   return (
     <div className="flex items-center  justify-between mb-2 text-lg font-medium p-1 ">
-      <Link to="/">
+      <NavLink to="/">
         <img className="h-12 ml-2 brightness-150" src={`${logo}`} alt="logo" />
-      </Link>
+      </NavLink>
       <ul className="flex items-center px-3 my-1 last:pr-0">
-        <NavLink className="navbar-li">
-          <Link to="/explorework"> Explore Work</Link>
-        </NavLink>
-        <NavLink className="navbar-li">
-          <Link to="/hiretalent"> Hire Talents</Link>
-        </NavLink>
-        <NavLink className="navbar-li">
-          <Link to="/getstarted"> Get Started</Link>
-        </NavLink>
-        <NavLink
+        <li className="navbar-li">
+          <NavLink to="/explorework"> Explore Work</NavLink>
+        </li>
+        <li className="navbar-li">
+          <NavLink to="/hiretalent"> Hire Talents</NavLink>
+        </li>
+        <li className="navbar-li">
+          <NavLink to="/getstarted"> Get Started</NavLink>
+        </li>
+        <li
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}
-          className="w-10 h-10"
+          className="w-10 h-10 cursor-pointer"
         >
           {user ? <Usercard user={user} /> : <FaUserCircle size={40} />}
           {isOptionsOpen && (
             <div className="w-28 absolute z-10 text-right right-1 mr-1">
-              <div className="navbar-li text-right mx-0">View Profile</div>
+              <div
+                onClick={() => viewProfileHandler()}
+                className="navbar-li text-right mx-0"
+              >
+                View Profile
+              </div>
               <hr />
               <div
                 className="navbar-li text-right mx-0"
@@ -47,7 +63,7 @@ function Navbar() {
               </div>
             </div>
           )}
-        </NavLink>
+        </li>
       </ul>
     </div>
   );

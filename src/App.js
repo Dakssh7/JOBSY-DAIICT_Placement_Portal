@@ -7,6 +7,7 @@ import Navbar from "./Components/Navbar";
 import Profiles from "./Components/Profiles";
 import Signin from './Components/Signin';
 import ViewProfile from "./Components/ViewProfile";
+import Toast from './features/Toast';
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
           <Route path="*" element={<h1> Not Found</h1>} />
         </Routes>
       </AnimatePresence>
+      <Toast></Toast>
     </>
   );
 }

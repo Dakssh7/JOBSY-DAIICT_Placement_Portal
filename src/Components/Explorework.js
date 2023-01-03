@@ -5,7 +5,6 @@ import ExploreworkData from "./ExploreworkData";
 import Homedata from "./Homedata";
 import { HashLoader } from "react-spinners";
 import { toast } from "react-toastify";
-import Toast from "../features/Toast";
 
 // TODO: THIS SHOWS ALL THE PROJECTS
 
@@ -61,7 +60,6 @@ function Explorework() {
           );
         })}
       </div>
-      <Toast />
     </motion.div>
   );
 }
