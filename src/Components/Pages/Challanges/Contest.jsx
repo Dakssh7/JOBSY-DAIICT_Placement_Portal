@@ -1,13 +1,10 @@
-import React from "react";
+import { motion } from "framer-motion";
 import { TbBulb } from "react-icons/tb";
 import LiveChallangesCard from "./LiveChallangesCard";
-import { motion } from 'framer-motion';
-import { AnimatePresence } from "framer-motion";
-
 
 function Contest() {
   let liveChallenges = true;
-  //todo: fetch live challanges from API 
+  //todo: fetch live challanges from API
   return (
     <motion.div
       initial={{ y: "100vh", opacity: 0 }}

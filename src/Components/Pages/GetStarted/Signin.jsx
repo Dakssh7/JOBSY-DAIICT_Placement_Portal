@@ -35,7 +35,7 @@ const Signin = () => {
       style={{
         backgroundImage: `url(${login_bg})`,
       }}
-      className="h-[91vh] flex items-center bg-right bg-no-repeat"
+      className="h-[calc(99vh_-_60px)] bg-[#27272a] bg-blend-overlay flex items-center bg-right bg-no-repeat"
     >
       <div className="gradient max-w-[35%] ml-4 px-8 py-12 rounded-md text-center">
         <h2 className="text-3xl font-bold tracking-tight">

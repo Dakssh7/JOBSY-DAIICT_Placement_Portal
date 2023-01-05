@@ -25,7 +25,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="flex items-center  justify-between mb-2 text-lg font-medium p-1 ">
+    <nav className="flex items-center  justify-between mb-2 text-lg font-medium p-1 h-[56px]">
       <NavLink activeClassName='active' to="/">
         <img className="h-12 ml-2 brightness-150" src={`${logo}`} alt="logo" />
       </NavLink>
