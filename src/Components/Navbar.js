@@ -38,6 +38,9 @@ function Navbar() {
           <NavLink activeClassName='active' to="/hiretalent"> Hire Talents</NavLink>
         </li>
         <li className="navbar-li">
+          <NavLink activeClassName='active' to="/challanges"> Challanges</NavLink>
+        </li>
+        <li className="navbar-li">
           <NavLink activeClassName='active' to="/getstarted"> Get Started</NavLink>
         </li>
         <li
@@ -46,7 +49,7 @@ function Navbar() {
         >
           {user ? <Usercard user={user} /> : <FaUserCircle size={40} />}
           {isOptionsOpen && (
-            <div className="w-28 absolute z-10 text-right right-1 mr-1">
+            <div className="w-28 absolute z-50 text-right right-1 mr-1">
               <div
                 onClick={() => viewProfileHandler()}
                 className="navbar-li text-right mx-0"

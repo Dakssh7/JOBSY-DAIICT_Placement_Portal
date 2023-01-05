@@ -21,7 +21,7 @@ function Explorework() {
   }, []);
   useEffect(() => {
     if (users && users.length === 0) {
-        toast.info("Your search returned no result!");
+      toast.info("Your search returned no result!");
     }
   }, [users]);
 

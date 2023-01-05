@@ -28,7 +28,7 @@ export default function ProfilesData({
   let navigate = useNavigate();
 
   const user = useSelector((state) => state.user.user);
-  
+
   function viewHandler(id) {
     user ? navigate(`/hiretalent/${id}`) : notLoggedIn();
   }
@@ -42,7 +42,7 @@ export default function ProfilesData({
 
   function shareHandler(id) {
     navigator.clipboard.writeText(`${axios.defaults.baseURL}/hiretalent/${id}`);
-    toast.success('Link copied to clipboard')
+    toast.success("Link copied to clipboard");
   }
   return (
     <motion.div

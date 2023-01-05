@@ -8,6 +8,7 @@ import Profiles from "./Components/Profiles";
 import Signin from './Components/Signin';
 import ViewProfile from "./Components/ViewProfile";
 import Toast from './features/Toast';
+import Contest from './Components/Contest';
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
           <Route path="/hiretalent" element={<Profiles />} />
           <Route path="/hiretalent/:userID" element={<ViewProfile />} />
           <Route path="/getstarted" element={<Signin />} />
+          <Route path="/challanges" element={<Contest />} />
           <Route path="*" element={<h1> Not Found</h1>} />
         </Routes>
       </AnimatePresence>

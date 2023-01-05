@@ -18,6 +18,12 @@
   .navbar-li {
     @apply mx-10 hover:text-sky-400;
   }
+  .secondary-color{
+    @apply text-slate-500;
+  }
+  .icon{
+    @apply inline mr-1;
+  }
 }
 
 @layer base{

@@ -10,12 +10,12 @@ export default function Landingpage() {
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
-      className="grid grid-cols-2 bg-[#27272a] h-[91vh] bg-contain bg-no-repeat bg-right bg-blend-overlay"
+      className="bg-[#27272a] h-[91vh] lg:bg-contain bg-cover  bg-no-repeat bg-right bg-blend-overlay"
       style={{ backgroundImage: `url(${landing_bg})` }}
     >
-      <div className="flex justify-center w-full rounded-md bg-blend-overlay">
+      <div className="my-auto flex h-full w-full lg:w-[42%] justify-center rounded-md bg-blend-overlay">
         <Typed
-          className="block text-6xl m-auto text-opacity-400 text-[#896bff] font-bold"
+          className="block text-6xl my-auto text-opacity-400 text-[#896bff] font-bold"
           strings={[
             "{ Collab With Other Developers }",
             "{ Find Ideal Candidate }",
