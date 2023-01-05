@@ -24,7 +24,7 @@ function ExploreworkData({
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 300, opacity: 0 }}
         transition={{ duration: 1, type: "tween" }}
-        className="mt-2 border border-sky-200  rounded-md shadow-md"
+        className="mt-2 border border-sky-200 rounded-md shadow-md"
       >
         <div className="flex w-full items-center justify-start gap-3  p-3">
           <img
@@ -43,18 +43,18 @@ function ExploreworkData({
         <div className="flex items-start w-fit rounded-sm bg-blue-100">
           <img className="object-contain aspect-video" src={projectVideoSRC}></img>
         </div>
-        <div className="d flex w-1/3 items-end justify-between p-3">
+        <div className="stats flex md:w-1/3 items-end justify-between p-3">
           <div className="flex w-full flex-col items-start justify-center">
             <div className="flex w-full items-center justify-between gap-3">
               <div className="mb-1 flex w-full items-center justify-start gap-3">
                 <button className="text-base inline-flex items-center justify-start">
-                  <AiOutlineHeart className="mr-1"></AiOutlineHeart>{likesCount}
+                  <AiOutlineHeart className="icon"></AiOutlineHeart>{likesCount}
                 </button>
                 <button className="text-base inline-flex items-center justify-start">
-                  <FaRegCommentDots className="mr-1"></FaRegCommentDots> {commentsCount}
+                  <FaRegCommentDots className="icon"></FaRegCommentDots> {commentsCount}
                 </button>
                 <button className="text-base inline-flex items-center justify-start">
-                  <AiOutlineEye className="mr-1"></AiOutlineEye> {viewsCount}
+                  <AiOutlineEye className="icon"></AiOutlineEye> {viewsCount}
                 </button>
               </div>
               <div className="relative undefined">
@@ -63,12 +63,12 @@ function ExploreworkData({
                   aria-expanded="false"
                 >
                   <button className="flex items-center justify-center">
-                    <RiSendPlaneFill className="m-1"></RiSendPlaneFill>
+                    <RiSendPlaneFill className="icon"></RiSendPlaneFill>
                   </button>
                 </div>
               </div>
               <button className="ml-auto">
-                <BsSave className="m-1"></BsSave>
+                <BsSave className="icon"></BsSave>
               </button>
             </div>
           </div>

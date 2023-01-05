@@ -10,7 +10,7 @@ export default function Landingpage() {
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
-      className="bg-[#27272a] h-[calc(99vh_-_60px)] lg:bg-contain bg-cover bg-no-repeat bg-right bg-blend-overlay"
+      className="bg-[#27272a] h-[calc(99vh_-_60px)] bg-contain min-w-[100vh] bg-no-repeat bg-right bg-blend-overlay"
       style={{ backgroundImage: `url(${landing_bg})` }}
     >
       <div className="my-auto flex h-full w-full lg:w-[42%] justify-center rounded-md bg-blend-overlay">

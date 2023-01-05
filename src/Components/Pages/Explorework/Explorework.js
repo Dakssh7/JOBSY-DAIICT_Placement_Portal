@@ -41,7 +41,7 @@ function Explorework() {
       transition={{ duration: 1, type: "tween" }}
     >
       <Homedata setUsers={setUsers} />
-      <div className="grid grid-cols-3 gap-4 mx-2">
+      <div className="mt-2 grid lg:grid-cols-3 md:grid-cols-2 justify-center gap-4 mx-2">
         {users.map((user) => {
           return (
             <ExploreworkData

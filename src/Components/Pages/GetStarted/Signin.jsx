@@ -35,9 +35,9 @@ const Signin = () => {
       style={{
         backgroundImage: `url(${login_bg})`,
       }}
-      className="h-[calc(99vh_-_60px)] bg-[#27272a] bg-blend-overlay flex items-center bg-right bg-no-repeat"
+      className="h-[calc(99vh_-_60px)] bg-[#27272a] bg-blend-overlay flex items-center justify-center lg:justify-start bg-right md:bg-no-repeat"
     >
-      <div className="gradient max-w-[35%] ml-4 px-8 py-12 rounded-md text-center">
+      <div className="gradient lg:max-w-[35%] md:w-[50%]  md:ml-4 md:px-8 md:py-12 mx-2 px-2 py-4 rounded-md text-center">
         <h2 className="text-3xl font-bold tracking-tight">
           <IoIosPeople className="inline" /> Log-in / Sign-up
         </h2>
@@ -57,6 +57,7 @@ const Signin = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </label>
+          <hr className="md:hidden"/>
           <label>
             <MdOutlinePassword className="inline mr-1 text-xl "></MdOutlinePassword>
             <input

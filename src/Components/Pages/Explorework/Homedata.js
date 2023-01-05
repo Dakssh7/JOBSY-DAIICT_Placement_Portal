@@ -36,7 +36,7 @@ function Homedata({ setUsers }) {
       exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
       id="talent_section"
-      className=" flex rounded-md shadow-inner  my-18 flex-col items-center justify-center gap-5 "
+      className="flex rounded-md shadow-inner  my-18 flex-col items-center justify-center gap-5 w-full"
     >
       <h1 className="mt-2 text-center text-3xl font-semibold">
         Find a perfect talent
@@ -83,9 +83,9 @@ function Homedata({ setUsers }) {
           </div>
         </div>
       </blockquote>
-      <div className="grid grid-cols-3  gap-5 w-full my-2 p-3">
+      <div className="grid grid-cols-3 md:gap-3 lg:gap-5 w-full my-2 md:p-3 ">
         <label>
-          <BiCoinStack className="inline mr-1 text-xl"></BiCoinStack>
+          <BiCoinStack className="hidden md:icon md:text-xl"></BiCoinStack>
           <input
             type="text"
             className="input-class"
@@ -97,7 +97,7 @@ function Homedata({ setUsers }) {
           />
         </label>
         <label>
-          <GoLocation className="inline mr-1 text-xl"></GoLocation>
+          <GoLocation className="hidden md:icon md:text-xl"></GoLocation>
           <input
             type="text"
             className="input-class"
@@ -109,9 +109,9 @@ function Homedata({ setUsers }) {
         </label>
         <button
           onClick={() => clickHandler()}
-          className="transition-all duration-300 ease-in-out bg-sky-400 hover:bg-sky-500 active:bg-sky-500  px-4 py-2 text-base  rounded-md w-1/2 ml-20 flex justify-center "
+          className="transition-all duration-300 ease-in-out bg-sky-400 hover:bg-sky-500 active:bg-sky-500  px-4 py-2 text-base  rounded-md md:w-1/2 md:ml-20 flex justify-center items-center w-fit"
         >
-          <BsSearch className="inline self-center mr-1"></BsSearch> Search
+          <BsSearch className="icon"></BsSearch> Search
         </button>
       </div>
     </motion.div>
