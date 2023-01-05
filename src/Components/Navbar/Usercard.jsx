@@ -1,11 +1,11 @@
 import React from "react";
 
-export const Usercard = ({ user }) => {
+export const Usercard = ({ userImage }) => {
   return (
     <>
       <img
         className="rounded-full object-contain"
-        src={user.image}
+        src={userImage}
         alt="user profile picture"
       />
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 import Typed from "react-typed";
-import landing_bg from "../Assets/landing_bg.jpg";
+import landing_bg from "../Assets/Images/landing_bg.jpg";
 import { motion } from "framer-motion";
 
 export default function Landingpage() {

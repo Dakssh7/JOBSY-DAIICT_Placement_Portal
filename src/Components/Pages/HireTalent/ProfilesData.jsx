@@ -12,7 +12,7 @@ import { MdEventAvailable } from "react-icons/md";
 import { RiSuitcaseLine } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import axios from "../axiosConfig/axios";
+import axios from "axiosConfig/axios.js";
 import { toast } from "react-toastify";
 
 export default function ProfilesData({

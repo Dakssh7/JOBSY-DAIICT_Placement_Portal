@@ -3,10 +3,9 @@ import { FaUserCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import logo from "../Assets/logo.png";
-import { logout } from "../redux/userSlice";
+import logo from "Assets/Images/logo.png";
+import { logout } from "../../redux/userSlice";
 import { Usercard } from "./Usercard";
-
 function Navbar() {
   let navigate = useNavigate();
 
@@ -26,7 +25,7 @@ function Navbar() {
   }
 
   return (
-    <div className="flex items-center  justify-between mb-2 text-lg font-medium p-1 ">
+    <nav className="flex items-center  justify-between mb-2 text-lg font-medium p-1 ">
       <NavLink activeClassName='active' to="/">
         <img className="h-12 ml-2 brightness-150" src={`${logo}`} alt="logo" />
       </NavLink>
@@ -47,7 +46,7 @@ function Navbar() {
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}
           className="w-10 h-10 cursor-pointer"
         >
-          {user ? <Usercard user={user} /> : <FaUserCircle size={40} />}
+          {user ? <Usercard userImage={user.image} /> : <FaUserCircle size={40} />}
           {isOptionsOpen && (
             <div className="w-28 absolute z-50 text-right right-1 mr-1">
               <div
@@ -67,7 +66,7 @@ function Navbar() {
           )}
         </li>
       </ul>
-    </div>
+    </nav>
   );
 }
 

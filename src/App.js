@@ -1,14 +1,14 @@
 import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import Explorework from "./Components/Explorework";
+import Contest from './Components//Pages/Challanges/Contest';
 import Landingpage from "./Components/Landingpage";
-import Navbar from "./Components/Navbar";
-import Profiles from "./Components/Profiles";
-import Signin from './Components/Signin';
-import ViewProfile from "./Components/ViewProfile";
+import Navbar from "./Components/Navbar/Navbar";
+import Explorework from "./Components/Pages/Explorework/Explorework";
+import Profiles from './Components/Pages/HireTalent/Profiles';
+import Signin from './Components/Pages/GetStarted/Signin';
+import ViewProfile from "./Components/Pages/HireTalent/ViewProfile";
 import Toast from './features/Toast';
-import Contest from './Components/Contest';
 
 function App() {
   const location = useLocation();

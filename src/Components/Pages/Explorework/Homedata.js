@@ -3,7 +3,7 @@ import { GoLocation } from "react-icons/go";
 import { BiCoinStack } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import { motion } from "framer-motion";
-import axios from "../axiosConfig/axios";
+import axios from "../../../axiosConfig/axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

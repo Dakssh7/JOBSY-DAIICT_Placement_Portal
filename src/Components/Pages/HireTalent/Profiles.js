@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { HashLoader } from "react-spinners";
-import axios from "../axiosConfig/axios";
+import axios from "../../../axiosConfig/axios";
 import ProfilesData from "./ProfilesData";
   
 // TODO: THIS SHOWS ALL THE USER PROFILES

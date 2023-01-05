@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import axios from "../axiosConfig/axios";
+import axios from "../../../axiosConfig/axios";
 import ExploreworkData from "./ExploreworkData";
 import Homedata from "./Homedata";
 import { HashLoader } from "react-spinners";

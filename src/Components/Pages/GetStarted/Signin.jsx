@@ -4,10 +4,9 @@ import { IoIosPeople } from "react-icons/io";
 import { MdOutlineEmail, MdOutlinePassword } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import login_bg from "../Assets/login_bg.jpg";
-import axios from "../axiosConfig/axios";
-import { setUser } from "../redux/userSlice";
-
+import login_bg from "Assets/Images/login_bg.jpg";
+import axios from "axiosConfig/axios.js";
+import { setUser } from "../../../redux/userSlice";
 const Signin = () => {
   const [username, setUsername] = useState("kminchelle");
   const [password, setPassword] = useState("0lelplR");
