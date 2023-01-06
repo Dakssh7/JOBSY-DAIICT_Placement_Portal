@@ -31,7 +31,7 @@ function Profiles() {
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: "-100vh", opacity: 0 }}
       transition={{ duration: 1, type: "tween" }}
-      className="m-1.5 grid grid-cols-3 gap-x-5 gap-y-7"
+      className="m-2 md:m-3 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-x-5 gap-y-7"
     >
       {users.map((user) => {
         return (

@@ -92,20 +92,20 @@ export default function ProfilesData({
             <p className="pill">HTML</p>
           </div>
         </div>
-        <div className="buttons-section flex justify-around w-full mt-2">
+        <div className="buttons-section flex flex-wrap gap-4 sm:gap-0 sm:justify-around w-full mt-2">
           <button onClick={() => shareHandler(userID)} className="btn-primary">
-            <BsShare className="inline mr-1"></BsShare>SHARE
+            <BsShare className="icon"></BsShare>SHARE
           </button>
           <button className="btn-primary">
-            <BsFillBookmarkFill className="inline  mr-1"></BsFillBookmarkFill>
+            <BsFillBookmarkFill className="icon"></BsFillBookmarkFill>
             SAVE
           </button>
           <button onClick={() => viewHandler(userID)} className=" btn-primary">
-            <CgProfile className="inline mr-1  mb-[3px]" />
+            <CgProfile className="icon mb-[3px]" />
             VIEW
           </button>
           <button className="btn-primary">
-            <BsFillChatDotsFill className="inline mr-1 mb-[3px]" />
+            <BsFillChatDotsFill className="icon mb-[3px]" />
             CHAT
           </button>
         </div>

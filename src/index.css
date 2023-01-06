@@ -16,7 +16,7 @@
     @apply bg-transparent  p-1 w-[90%] pt-2 focus:border-b focus:border-sky-300 focus:outline-none;
   }
   .navbar-li {
-    @apply mx-10 hover:text-sky-400;
+    @apply lg:mx-10 md:mx-6 hover:text-sky-400;
   }
   .secondary-color{
     @apply text-slate-500;

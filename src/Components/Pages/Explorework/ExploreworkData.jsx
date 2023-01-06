@@ -41,34 +41,34 @@ function ExploreworkData({
           </div>
         </div>
         <div className="flex items-start w-fit rounded-sm bg-blue-100">
-          <img className="object-contain aspect-video" src={projectVideoSRC}></img>
+          <img
+            className="object-contain aspect-video"
+            src={projectVideoSRC}
+          ></img>
         </div>
         <div className="stats flex md:w-1/3 items-end justify-between p-3">
           <div className="flex w-full flex-col items-start justify-center">
             <div className="flex w-full items-center justify-between gap-3">
               <div className="mb-1 flex w-full items-center justify-start gap-3">
                 <button className="text-base inline-flex items-center justify-start">
-                  <AiOutlineHeart className="icon"></AiOutlineHeart>{likesCount}
+                  <AiOutlineHeart className="icon" /> {likesCount}
                 </button>
                 <button className="text-base inline-flex items-center justify-start">
-                  <FaRegCommentDots className="icon"></FaRegCommentDots> {commentsCount}
+                  <FaRegCommentDots className="icon" /> {commentsCount}
                 </button>
                 <button className="text-base inline-flex items-center justify-start">
-                  <AiOutlineEye className="icon"></AiOutlineEye> {viewsCount}
+                  <AiOutlineEye className="icon" /> {viewsCount}
                 </button>
               </div>
               <div className="relative undefined">
-                <div
-                  className="active:outline-none"
-                  aria-expanded="false"
-                >
+                <div className="active:outline-none" aria-expanded="false">
                   <button className="flex items-center justify-center">
-                    <RiSendPlaneFill className="icon"></RiSendPlaneFill>
+                    <RiSendPlaneFill className="icon" />
                   </button>
                 </div>
               </div>
               <button className="ml-auto">
-                <BsSave className="icon"></BsSave>
+                <BsSave className="icon" />
               </button>
             </div>
           </div>

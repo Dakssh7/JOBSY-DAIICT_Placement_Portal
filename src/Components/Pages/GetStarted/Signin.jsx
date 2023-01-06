@@ -37,7 +37,7 @@ const Signin = () => {
       }}
       className="h-[calc(99vh_-_60px)] bg-[#27272a] bg-blend-overlay flex items-center justify-center lg:justify-start bg-right md:bg-no-repeat"
     >
-      <div className="gradient lg:max-w-[35%] md:w-[50%]  md:ml-4 md:px-8 md:py-12 mx-2 px-2 py-4 rounded-md text-center">
+      <div className="gradient lg:max-w-[35%] md:w-[60%] md:ml-4 md:px-8 md:py-12 mx-2 px-2 py-4 rounded-md text-center">
         <h2 className="text-3xl font-bold tracking-tight">
           <IoIosPeople className="inline" /> Log-in / Sign-up
         </h2>
